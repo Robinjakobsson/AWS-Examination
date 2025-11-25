@@ -1,0 +1,208 @@
+type: collection.insomnia.rest/5.0
+name: Examination
+meta:
+  id: wrk_9dc955da038645f38fa9a73c98618039
+  created: 1763714184481
+  modified: 1763714184481
+  description: ""
+collection:
+  - url: https://mlfjwc3i2e.execute-api.eu-north-1.amazonaws.com/user/login
+    name: Login
+    meta:
+      id: req_51a0ec15663940af9e5c50c09e43e614
+      created: 1763714192905
+      modified: 1764058196327
+      isPrivate: false
+      description: ""
+      sortKey: -1763714192905
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "dropp@mail.com",
+        	"password": "hej"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.0.0
+    authentication:
+      type: none
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://mlfjwc3i2e.execute-api.eu-north-1.amazonaws.com/user/signup
+    name: SignUp
+    meta:
+      id: req_9816753015844058b23371d0392b44ac
+      created: 1763714199161
+      modified: 1764058188086
+      isPrivate: false
+      description: ""
+      sortKey: -1763714199161
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "dropp@mail.com",
+        	"password": "hej"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.0.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://mlfjwc3i2e.execute-api.eu-north-1.amazonaws.com/notes
+    name: DeleteNote
+    meta:
+      id: req_15eca65a1e484e9fb96f9ef453bcfcb9
+      created: 1763714210539
+      modified: 1763995170817
+      isPrivate: false
+      description: ""
+      sortKey: -1763714210539
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"noteId": "ec24bb1c-bf6a-456d-8ecc-3380a5569fd4"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.0.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyYzAxZDQzYS03MDQwLTRmOGMtYmEwZi0yMWQ5YzYwMWY5ODgiLCJpYXQiOjE3NjM5OTUxNTcsImV4cCI6MTc2Mzk5ODc1N30.FzNTV2Ek6XismUjkUkLHNWug-7_oXIvjsPaPDX79kHw
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://mlfjwc3i2e.execute-api.eu-north-1.amazonaws.com/notes?noteId=a8a34151-67e8-4d3a-a527-18b271fac7dc
+    name: EditNote
+    meta:
+      id: req_3fe919d0a65b447796eaceaab990634f
+      created: 1763714212578
+      modified: 1764060151370
+      isPrivate: false
+      description: ""
+      sortKey: -1763714212578
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "Uppdaterat igen"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.0.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MjI0YmNjNC1iODZlLTRlZWYtYWZjOC0xNTEwOWY1MTJhNzYiLCJpYXQiOjE3NjQwNTgxOTgsImV4cCI6MTc2NDA2MTc5OH0.c0Xcy0xChKwVWhG2gSD23VVRu39CuLvqA5gGqMSvvH0
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://mlfjwc3i2e.execute-api.eu-north-1.amazonaws.com/notes
+    name: PostNote
+    meta:
+      id: req_7c0e4155b4664ec8b84bd12fdca4dcda
+      created: 1763714213896
+      modified: 1764059738190
+      isPrivate: false
+      description: ""
+      sortKey: -1763714213896
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "{% faker 'randomJobArea' %}",
+        	"content": "{% faker 'randomLoremWord' %}"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.0.0
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3MjI0YmNjNC1iODZlLTRlZWYtYWZjOC0xNTEwOWY1MTJhNzYiLCJpYXQiOjE3NjQwNTgxOTgsImV4cCI6MTc2NDA2MTc5OH0.c0Xcy0xChKwVWhG2gSD23VVRu39CuLvqA5gGqMSvvH0
+      prefix: Bearer
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: https://mlfjwc3i2e.execute-api.eu-north-1.amazonaws.com/notes
+    name: GetNotes
+    meta:
+      id: req_1b61f8c794ea485695bf28db04637364
+      created: 1763714215373
+      modified: 1763995186142
+      isPrivate: false
+      description: ""
+      sortKey: -1763714215373
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.0.0
+    authentication:
+      type: bearer
+      prefix: Bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyYzAxZDQzYS03MDQwLTRmOGMtYmEwZi0yMWQ5YzYwMWY5ODgiLCJpYXQiOjE3NjM5OTUxNTcsImV4cCI6MTc2Mzk5ODc1N30.FzNTV2Ek6XismUjkUkLHNWug-7_oXIvjsPaPDX79kHw
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_1102bcc3df71ce80e65e39da8433060fc00e986b
+    created: 1763714184484
+    modified: 1763714184484
+environments:
+  name: Base Environment
+  meta:
+    id: env_1102bcc3df71ce80e65e39da8433060fc00e986b
+    created: 1763714184483
+    modified: 1763714184483
+    isPrivate: false

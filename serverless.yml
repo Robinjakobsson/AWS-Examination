@@ -1,0 +1,90 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: robinjakobsson
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: Examination
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: eu-north-1
+  environment:
+    JWT_SECRET: ${env:JWT_SECRET}
+  iam:
+    role: 'arn:aws:iam::079235168596:role/examination'
+
+    
+  
+
+functions:
+  GetNotes:
+    handler: functions/GetNotes/index.handler
+    events:
+      - httpApi:
+          path: /notes
+          method: GET
+
+  PostNote:
+    handler: functions/PostNote/index.handler
+    events:
+      - httpApi:
+          path: /notes
+          method: POST
+
+
+  EditNote:
+    handler: functions/EditNote/index.handler
+    events:
+      - httpApi:
+          path: /notes
+          method: PUT
+
+  DeleteNote:
+    handler: functions/DeleteNote/index.handler
+    events:
+      - httpApi:
+          path: /notes
+          method: DELETE
+
+
+  Login:
+    handler: auth/Login/index.handler
+    events:
+      - httpApi:
+          path: /user/login
+          method: POST
+
+
+  SignUp:
+    handler: auth/SignUp/index.handler
+    events:
+      - httpApi:
+          path: /user/signup
+          method: POST
+
+
+resources:
+  Resources:
+    usersDb :
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: users-dbb
+        AttributeDefinitions:
+          - AttributeName: PK
+            AttributeType: S
+          - AttributeName: SK
+            AttributeType: S
+          - AttributeName: email
+            AttributeType: S
+        KeySchema:
+          - AttributeName: PK
+            KeyType: HASH
+          - AttributeName: SK
+            KeyType: RANGE
+        GlobalSecondaryIndexes:
+        - IndexName: emailIndex
+          KeySchema:
+            - AttributeName: email
+              KeyType: HASH
+          Projection:
+            ProjectionType: ALL
+        BillingMode: PAY_PER_REQUEST
